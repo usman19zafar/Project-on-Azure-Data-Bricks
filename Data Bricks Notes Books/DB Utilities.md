@@ -53,3 +53,55 @@
 ```
 
 [36m===============================================================[0m
+
+```mermaid
+flowchart TD
+
+    A[dbutils]:::core
+
+    subgraph FS[dbutils.fs]
+        FS1[ls / cp / mv / rm]
+        FS2[mkdirs / head / tail]
+        FS3[put / mount / unmount]
+    end
+
+    subgraph SEC[dbutils.secrets]
+        SEC1[get]
+        SEC2[list]
+        SEC3[listScopes]
+    end
+
+    subgraph W[dbutils.widgets]
+        W1[text / dropdown]
+        W2[combobox / multiselect]
+        W3[get / remove / removeAll]
+    end
+
+    subgraph JOB[dbutils.jobs]
+        JOB1[taskValues.get/set]
+    end
+
+    subgraph LIB[dbutils.library]
+        LIB1[install / uninstall]
+        LIB2[restartPython]
+    end
+
+    subgraph NB[dbutils.notebook]
+        NB1[run(path,args)]
+        NB2[exit(value)]
+    end
+
+    subgraph UTIL[dbutils.utilities]
+        U1[help()]
+    end
+
+    A --> FS
+    A --> SEC
+    A --> W
+    A --> JOB
+    A --> LIB
+    A --> NB
+    A --> UTIL
+
+classDef core fill:#0af,stroke:#036,stroke-width:2px,color:#fff;
+```
