@@ -57,12 +57,12 @@
 ```mermaid
 flowchart TD
 
-    A[dbutils]:::core
+    A[dbutils]
 
     subgraph FS[dbutils.fs]
-        FS1[ls / cp / mv / rm]
-        FS2[mkdirs / head / tail]
-        FS3[put / mount / unmount]
+        FS1[ls cp mv rm]
+        FS2[mkdirs head tail]
+        FS3[put mount unmount]
     end
 
     subgraph SEC[dbutils.secrets]
@@ -72,27 +72,27 @@ flowchart TD
     end
 
     subgraph W[dbutils.widgets]
-        W1[text / dropdown]
-        W2[combobox / multiselect]
-        W3[get / remove / removeAll]
+        W1[text dropdown]
+        W2[combobox multiselect]
+        W3[get remove removeAll]
     end
 
     subgraph JOB[dbutils.jobs]
-        JOB1[taskValues.get/set]
+        JOB1[taskValues get set]
     end
 
     subgraph LIB[dbutils.library]
-        LIB1[install / uninstall]
+        LIB1[install uninstall]
         LIB2[restartPython]
     end
 
     subgraph NB[dbutils.notebook]
-        NB1[run(path,args)]
-        NB2[exit(value)]
+        NB1[run notebook]
+        NB2[exit notebook]
     end
 
     subgraph UTIL[dbutils.utilities]
-        U1[help()]
+        U1[help]
     end
 
     A --> FS
@@ -102,6 +102,4 @@ flowchart TD
     A --> LIB
     A --> NB
     A --> UTIL
-
-classDef core fill:#0af,stroke:#036,stroke-width:2px,color:#fff;
 ```
