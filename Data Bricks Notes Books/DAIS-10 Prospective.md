@@ -1,16 +1,19 @@
-DAIS‑10 BOUNDARY DOCUMENT
-Subsystem: Databricks dbutils
-────────────────────────────────────────
+                                                                                        DAIS‑10 BOUNDARY DOCUMENT
+                                                                                        Subsystem: Databricks dbutils
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
 
 1. Purpose
 This boundary document defines the operational limits, responsibilities, and interaction rules for the Databricks dbutils subsystem when used inside notebooks, workflows, and automated pipelines.
 It ensures predictable behavior, prevents misuse, and clarifies what dbutils is and is not responsible for within a DAIS‑10–aligned architecture.
+________________________________________________________________________________________________________________________________________________________________________________________________________
 
 2. System Identity
 Subsystem Name: dbutils  
 Location: Databricks Runtime (Notebook Execution Environment)
 Classification: Utility Layer / Execution‑Time Helper
 Primary Role: Provide controlled access to filesystem, secrets, widgets, libraries, notebook orchestration, and job task values.
+________________________________________________________________________________________________________________________________________________________________________________________________________
 
 3. In‑Scope Capabilities
 dbutils provides operational utilities, not business logic.
@@ -81,66 +84,71 @@ Provide runtime‑specific documentation
 
 Boundary:  
 Help output is informational only and not guaranteed stable across runtimes.
+________________________________________________________________________________________________________________________________________________________________________________________________________
 
 4. Out‑of‑Scope Responsibilities
+
 The following responsibilities do not belong to dbutils:
 
-Data transformation
-
-Business logic
-
-Schema enforcement
-
-Distributed compute optimization
-
-Cluster provisioning or scaling
-
-Security policy enforcement
-
-Workflow scheduling
-
-Data governance or lineage
-
-Error recovery or retry logic
-
-Performance tuning
+        Data transformation
+        
+        Business logic
+        
+        Schema enforcement
+        
+        Distributed compute optimization
+        
+        Cluster provisioning or scaling
+        
+        Security policy enforcement
+        
+        Workflow scheduling
+        
+        Data governance or lineage
+        
+        Error recovery or retry logic
+        
+        Performance tuning
 
 These belong to Spark, Delta Lake, Databricks Jobs, Unity Catalog, or external systems.
+________________________________________________________________________________________________________________________________________________________________________________________________________
 
 5. Interaction Rules
+
 5.1 Invocation Context
 dbutils may only be invoked inside:
 
-Databricks notebooks
-
-Databricks jobs
-
-Databricks Repos notebooks
-
-Interactive cluster sessions
-
-It is not available in:
-
-Standalone Python scripts
-
-External IDEs
-
-Local environments
+      Databricks notebooks
+      
+      Databricks jobs
+      
+      Databricks Repos notebooks
+      
+      Interactive cluster sessions
+      
+      It is not available in:
+      
+      Standalone Python scripts
+      
+      External IDEs
+      
+      Local environments
 
 5.2 Determinism
+
 dbutils operations are not guaranteed deterministic across:
 
-runtimes
-
-clusters
-
-mount configurations
-
-secret scopes
-
-library availability
-
-DAIS‑10 components must treat dbutils as a volatile boundary.
+    runtimes
+    
+    clusters
+    
+    mount configurations
+    
+    secret scopes
+    
+    library availability
+    
+    DAIS‑10 components must treat dbutils as a volatile boundary.
 
 5.3 Error Handling
 dbutils does not provide structured error types.
@@ -179,6 +187,8 @@ Workspace Admin
 
 Unity Catalog (if applicable)
 
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
 6. Guarantees
 dbutils guarantees:
 
@@ -191,6 +201,8 @@ Access to supported utilities in the active cluster
 Consistent API names across runtimes (not behavior)
 
 No side effects outside the notebook environment
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
 
 7. Non‑Guarantees
 dbutils does not guarantee:
@@ -211,6 +223,8 @@ Secret scope availability
 
 Library installation success
 
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
 8. Boundary Summary (ASCII Map)
 ```Code
 +--------------------------------------------------------------+
@@ -230,6 +244,8 @@ Library installation success
 |                      | - governance        | - no side fx    |
 +--------------------------------------------------------------+
 ```
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
 9. Formal Statement
 dbutils is a utility‑layer subsystem that provides operational helpers for notebooks and workflows.
 It is not a compute engine, storage engine, orchestration engine, or governance layer.
