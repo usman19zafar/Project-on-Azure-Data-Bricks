@@ -19,7 +19,42 @@ To enter the warehouse, the forklift must present one of four types of keys:
       Cluster Badge (Cluster Scoped Credentials)
 
 Each method gives a different level of control and security.
+```text
++-----------------+        +----------------------+        +------------------------+        +-----------------------------+
+|     Customer    |        |   Application /      |        |   Service Principal    |        |     Azure Data Lake         |
+| (User, Client)  | -----> |   Databricks / App   | -----> | (App Identity in AAD)  | -----> | (Storage Account + Containers) |
++-----------------+        +----------------------+        +------------------------+        +-----------------------------+
+          |                          |                               |                                   |
+          | 1. Sends request         |                               |                                   |
+          | (UI, API, Notebook)      |                               |                                   |
+          v                          |                               |                                   |
++-----------------+                  |                               |                                   |
+|  Business Logic |------------------+                               |                                   |
++-----------------+  2. Needs data from ADLS                        |                                   |
+                                   v                                |                                   |
+                         +----------------------+                   |                                   |
+                         |  Auth Config in     |--------------------+                                   |
+                         |  Notebook / App     |   3. Use SP creds (client_id, secret, tenant_id)       |
+                         +----------------------+                                                       |
+                                   |                                                                    |
+                                   v                                                                    |
+                         +----------------------+                                                       |
+                         |  Azure AD (AAD)     |<------------------------------------------------------+
+                         +----------------------+   4. Issue token for Service Principal
+                                   |
+                                   v
+                         +-----------------------------+
+                         |   Azure Data Lake Storage   |
+                         |   (Authorized via RBAC)     |
+                         +-----------------------------+
+                                   |
+                                   v
+                         5. Data returned to Application
+                                   |
+                                   v
+                         6. Response back to Customer
 
+```
 ------------------------------------------------------------
 SECTION 1 — ACCESS KEYS (MASTER KEY)
 ------------------------------------------------------------
