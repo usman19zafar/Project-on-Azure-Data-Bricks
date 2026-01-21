@@ -306,6 +306,9 @@ ls
 Utility:
 Linux commands, debugging, environment checks.
 
+Two‑word logic
+Robot commands
+
 SOP:
 ```Code
 %sh
