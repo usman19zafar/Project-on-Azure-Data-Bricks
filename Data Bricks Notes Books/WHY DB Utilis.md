@@ -105,6 +105,7 @@ It’s the operational layer of Databricks.
 Without dbutils, a notebook is just a script.
 With dbutils, a notebook becomes a pipeline, a job, a tool, a controller, a workflow.
 
+_________________________________________________________________________________________________________________________________________________________________________________
 4, Supper Easy: Imagine you have a big toy box.
 This toy box is your notebook.
 
@@ -129,7 +130,7 @@ Like:
 
 These helpers are called “utilities.”
 
-What are notebook utilities? (5‑year‑old version)
+What are notebook utilities? 
 They are little helpers that let your notebook do things it cannot do alone.
 
             One helper can look inside folders
