@@ -91,7 +91,7 @@ This is the path Spark understands.
 
 Command: Set Access Key in Databricks
 
-```Code
+```spark
 spark.conf.set(
   "fs.azure.account.key.uzi786.dfs.core.windows.net",
   "<your-access-key>"
