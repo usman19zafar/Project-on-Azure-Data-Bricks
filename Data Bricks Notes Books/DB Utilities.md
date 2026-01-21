@@ -41,16 +41,18 @@ Click through ADLS → Containers → Browse → Files
 
 Utility:
 
-Code
+```Code
 dbutils.fs.ls("abfss://demo@storage.dfs.core.windows.net/")
+```
 2. Secrets
 GUI:
 Azure Portal → Key Vault → Secrets → Copy
 
 Utility:
 
-Code
+```Code
 dbutils.secrets.get("scope", "key")
+```
 3. Widgets
 GUI:
 No GUI equivalent — only utilities can create parameters.
