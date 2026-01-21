@@ -122,7 +122,7 @@ Utilities exist so that engineers can perform tasks normally done through the GU
 ```
 Command to find all the utilities in Data Bricks:
 
-Display all utilities:
+UNIVERSAL COMMAND: Display all utilities:
 
 ```code
 dbutils.help()
