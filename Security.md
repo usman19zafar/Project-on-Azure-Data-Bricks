@@ -85,7 +85,7 @@ https://uzi786.blob.core.windows.net/demo/circuits.csv
 to:
 
 ```Code
-abfss://demo@uzi786.dfs.core.windows.net/circuit.csv
+abfss://demo@uzi786.dfs.core.windows.net/circuits.csv
 ```
 This is the path Spark understands.
 
@@ -112,7 +112,7 @@ Command: Read file
 ```Code
 
 display(
-  spark.read.csv("abfss://demo@uzi786.dfs.core.windows.net/circuit.csv")
+  spark.read.csv("abfss://demo@uzi786.dfs.core.windows.net/circuits.csv")
 )
 ```
 ------------------------------------------------------------
@@ -168,7 +168,7 @@ display(dbutils.fs.ls("abfss://demo@uzi786.dfs.core.windows.net"))
 Read file
 Code
 display(
-  spark.read.csv("abfss://demo@uzi786.dfs.core.windows.net/circuit.csv")
+  spark.read.csv("abfss://demo@uzi786.dfs.core.windows.net/circuits.csv")
 )
 ```
 ------------------------------------------------------------
@@ -266,7 +266,7 @@ display(dbutils.fs.ls("abfss://demo@uzi786.dfs.core.windows.net"))
 Read file
 ```Code
 display(
-  spark.read.csv("abfss://demo@uzi786.dfs.core.windows.net/circuit.csv")
+  spark.read.csv("abfss://demo@uzi786.dfs.core.windows.net/circuits.csv")
 )
 ```
 
