@@ -53,6 +53,17 @@
 
 ===============================================================
 ```
+Command to find all the utilities in Data Bricks:
+
+Display all utilities:
+
+dbutils.help()
+
+Getting Help on single utility:
+
+```code
+dbutils.<utility name>.help()
+```
 
 ```mermaid
 flowchart TD
