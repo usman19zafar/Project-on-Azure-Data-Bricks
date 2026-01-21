@@ -20,7 +20,9 @@
 
 11, We can schedule the note books by clicking on left hand side upper bar tab.
 
-12,
+12, Main Path of note book storage: Workspace → Users → your email → your notebooks
+
+13, until we save anyting, we cannot see the notebook in our above root path.
 
 
 
