@@ -124,7 +124,8 @@ Enables custom ETL logic
 In short:  
 Pip = extensibility + speed
 
-9️⃣ %run — Business Purpose
+9️⃣ %run — Business Purpose, interconnecting the parent and child notebook. 
+
 Purpose: Import reusable notebooks (shared functions, ETL modules, configs).
 
 Business value:
