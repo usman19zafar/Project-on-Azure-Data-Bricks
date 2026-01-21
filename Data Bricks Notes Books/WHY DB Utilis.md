@@ -1,5 +1,20 @@
-TABLE OF CONTENTS — EVERYTHING dbutils CAN DO
-This is the clean, complete, conceptual “table of contents” for the entire dbutils namespace.
+Why DB utils:
+
+            Databricks utilities make it easier to combine different types of tasks in a single notebook.
+            
+            For example, they allow us to combine file operations with ETL tasks.
+            
+            These utilities can only be run from Python, Scala, or cells in a notebook.
+            
+            They cannot be run from a SQL cell.
+            
+            Databricks have been coming up with a number of utilities.
+
+File system utilities allows us to access Databricks File system from a notebook, and you can use various file system level operations.
+
+TABLE OF CONTENTS — EVERYTHING dbutils CAN DO This is the clean, complete, conceptual “table of contents” for the entire dbutils namespace.
+
+
 
 ```Code
 dbutils
