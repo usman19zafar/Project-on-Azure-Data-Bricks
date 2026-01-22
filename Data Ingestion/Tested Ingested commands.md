@@ -16,7 +16,7 @@ Command‑by‑Command Explanation (All Successfully Executed)
 1. Authentication
 ```python
 spark.conf.set(
-  "fs.azure.account.key.uzi786.blob.core.windows.net",
+  "fs.azure.account.key.<Container name>.core.windows.net",
   "<Security Key>"
 )
 ```
@@ -39,7 +39,7 @@ ________________________________________________________________________________
 2. Define the WASBS Path
 
 ```python
-circuits_path = "wasbs://raw@uzi786.blob.core.windows.net/circuits.csv"
+circuits_path = "wasbs://raw@<Continer name>.windows.net/circuits.csv"
 ```
 
 What it does:  
