@@ -1,6 +1,6 @@
 Requirements:
 
-    Ingest All 8 Files into the data lake
+    Ingest All Files into the data lake
     Ingested data must have the schema application
     injested data must have audit columns
     ingested data must be stored in columnar format 
