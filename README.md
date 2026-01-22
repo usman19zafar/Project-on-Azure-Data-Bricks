@@ -14,7 +14,7 @@ The goal of this repository is to:
 This repository contains two types of content:
 
 ### 1. **Derived Knowledge**
-Some concepts, definitions, and workflows are based on an online course.  
+All the knowledge is derived from thinking about concepts, definitions, and workflows those are based on an online course.  
 These have been rewritten, reorganized, and re‑explained in my own voice and structure for professional ease.
 
 ### 2. **Original Contributions (Fully My Work)**
