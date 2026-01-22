@@ -10,11 +10,16 @@ The goal of this repository is to:
 - Present Spark, ingestion patterns, and data engineering concepts in a simplified, structured, and business‑aligned format.
 - Provide reusable reference material for engineers, analysts, and architects.
 
+
 ## Attribution and Original Work
 This repository contains two types of content:
 
 ### 1. **Derived Knowledge**
 All the knowledge is derived from thinking about concepts, definitions, and workflows those are based on an online course.  
+This project is getting developed on student account, so command and flows are tailered according to student account challenges.
+Original course was developed on Pay_as_go format. so some changes are expected. 
+My personal opinion is Student account gives you the challagenges that really enhance knowledge base!
+That slight difference enable me to claim the extra knowledge creation. 
 These have been rewritten, reorganized, and re‑explained in my own voice and structure for professional ease.
 
 ### 2. **Original Contributions (Fully My Work)**
