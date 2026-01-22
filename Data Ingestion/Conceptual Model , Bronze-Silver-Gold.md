@@ -1,15 +1,13 @@
 complete Bronze → Silver → Gold pipeline for circuits, in final notebook‑ready commands, using your non‑HNS Blob (WASBS) setup.
 
-I’ll give you:
-
 3 logical notebooks: Bronze, Silver, Gold
 
 commands only (ready to run)
 
 short notes on what each layer is doing
 
-🧱 Shared config (top of every notebook)
-python
+Shared config (top of every notebook)
+```python
 spark.conf.set(
   "fs.azure.account.key.uzi786.blob.core.windows.net",
   "<Security Key>"
@@ -19,10 +17,13 @@ raw_container_path     = "wasbs://raw@uzi786.blob.core.windows.net"
 bronze_container_path  = "wasbs://bronze@uzi786.blob.core.windows.net"
 silver_container_path  = "wasbs://silver@uzi786.blob.core.windows.net"
 gold_container_path    = "wasbs://gold@uzi786.blob.core.windows.net"
-1️⃣ Bronze notebook – ingest raw CSV → Bronze Parquet
+```
+
+_____________________________________________________________________________________________________________________________________________________________________
+1 Bronze notebook – ingest raw CSV → Bronze Parquet
 Goal: land raw data as‑is in Parquet (no business logic, just structure).
 
-python
+```python
 # 1. Source path (raw CSV)
 circuits_csv_path = f"{raw_container_path}/circuits.csv"
 
@@ -43,14 +44,18 @@ circuits_bronze_df.write \
     .parquet(bronze_output_path)
 What this makes you ready for:  
 Silver can now assume consistent Parquet input, not fragile CSV.
+```
 
-2️⃣ Silver notebook – clean + standardize → Silver Parquet
+_____________________________________________________________________________________________________________________________________________________________________
+2, Silver notebook – clean + standardize → Silver Parquet
 Goal: apply schema, rename columns, drop URL, add ingestion_date.
 
-python
+```python
 from pyspark.sql.functions import col, current_timestamp
+```
 
 # 1. Read from Bronze
+
 bronze_input_path = f"{bronze_container_path}/circuits"
 
 circuits_bronze_df = spark.read.parquet(bronze_input_path)
@@ -84,8 +89,8 @@ circuits_silver_df.write \
     .parquet(silver_output_path)
 What this makes you ready for:  
 Gold can now trust clean, typed, business‑ready columns.
-
-3️⃣ Gold notebook – business view → Gold Parquet
+_____________________________________________________________________________________________________________________________________________________________________
+3 Gold notebook – business view → Gold Parquet
 For circuits, a simple Gold example is a dimension table (DimCircuits).
 
 Goal: create a Gold‑layer dimension with only the fields needed for analytics.
@@ -129,6 +134,7 @@ Building a star schema around dim_circuits
 
 Tiny ASCII view of the whole thing
 
+_____________________________________________________________________________________________________________________________________________________________________
 ```text
 RAW (CSV, blob)
     │
