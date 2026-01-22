@@ -43,7 +43,7 @@ circuits_path = "wasbs://raw@<Continer name>.windows.net/circuits.csv"
 ```
 
 What it does:  
-Creates the correct path string for your file using the WASBS protocol, which is required because your storage account is non‑HNS.
+Creates the correct path string for your file using the WASBS protocol, which is required because your storage account is non‑HNS. BEST FOR STUDENT ACCOUNT!
 
 Why it matters:  
 Spark must know the exact location of the file.
