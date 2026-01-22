@@ -42,9 +42,10 @@ bronze_output_path = f"{bronze_container_path}/circuits"
 circuits_bronze_df.write \
     .mode("overwrite") \
     .parquet(bronze_output_path)
+```
+
 What this makes you ready for:  
 Silver can now assume consistent Parquet input, not fragile CSV.
-```
 
 _____________________________________________________________________________________________________________________________________________________________________
 2, Silver notebook – clean + standardize → Silver Parquet
@@ -52,7 +53,6 @@ Goal: apply schema, rename columns, drop URL, add ingestion_date.
 
 ```python
 from pyspark.sql.functions import col, current_timestamp
-```
 
 # 1. Read from Bronze
 
@@ -87,6 +87,7 @@ silver_output_path = f"{silver_container_path}/circuits"
 circuits_silver_df.write \
     .mode("overwrite") \
     .parquet(silver_output_path)
+```
 What this makes you ready for:  
 Gold can now trust clean, typed, business‑ready columns.
 _____________________________________________________________________________________________________________________________________________________________________
@@ -95,7 +96,7 @@ For circuits, a simple Gold example is a dimension table (DimCircuits).
 
 Goal: create a Gold‑layer dimension with only the fields needed for analytics.
 
-python
+```python
 # 1. Read from Silver
 silver_input_path = f"{silver_container_path}/circuits"
 
@@ -124,16 +125,13 @@ gold_output_path = f"{gold_container_path}/dim_circuits"
 circuits_gold_df.write \
     .mode("overwrite") \
     .parquet(gold_output_path)
+```
 What this makes you ready for:
-
 Direct consumption by Power BI / reporting
-
 Joining with other Gold tables (e.g., races, results)
-
 Building a star schema around dim_circuits
 
 Tiny ASCII view of the whole thing
-
 _____________________________________________________________________________________________________________________________________________________________________
 ```text
 RAW (CSV, blob)
