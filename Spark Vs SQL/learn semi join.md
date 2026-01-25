@@ -79,3 +79,6 @@ syntax
 renaming
 
 validation code
+
+Semi Join in One Line (Uzi v1.0)
+Semi Join = Inner Join that returns only the left rows and left columns.
