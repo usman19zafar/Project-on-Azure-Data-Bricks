@@ -30,6 +30,45 @@
 | When to use               | When thinking in SQL logic                 | When building programmatic expressions        |
 +---------------------------+--------------------------------------------+-----------------------------------------------+
 ```
+LEARNING:
+1. How Spark Filter Transformation Works
+You must learn:
+
+How to filter rows using SQL‑style syntax  
+df.filter("race_year = 2019")
+
+How to filter rows using Pythonic expression syntax  
+df.filter(df["race_year"] == 2019)
+
+How to apply multiple conditions
+
+SQL: AND, OR
+
+Python: &, | with parentheses
+
+How Spark evaluates conditions and returns only rows that satisfy them.
+
+This is the Spark equivalent of the SQL WHERE clause.
+
+2. How to Choose Between SQL‑Style and Pythonic Filters
+You must learn:
+
+When SQL‑style is easier (quick filters, familiar WHERE logic).
+
+When Pythonic style is required (programmatic expressions, chaining, dynamic conditions).
+
+The mechanical differences:
+
+= vs ==
+
+AND vs &
+
+Parentheses required in Pythonic filters
+
+Column reference rules
+
+_________________________________________________________________________________________________________________________________________________________________________
+
 
 Filter Transformation — Finalized Notes (Rewritten, Not Summarized)
 Section Introduction
